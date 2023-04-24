@@ -1,0 +1,70 @@
+<h3>Edit a Canditate</h3>
+
+<?PHP
+$link = mysqli_connect("localhost", "login", "wolf2001", "adkham") or die ("No connection");
+
+if(isset($_GET["Canditates"]))
+{  
+    $querytext = "SELECT *  
+                  FROM Canditates 
+                  where id=".$_GET["Canditates"]."";        
+    echo $querytext ;
+    
+    $result = mysqli_query($link, $querytext );
+    if (!mysqli_num_rows($result))
+    {
+        echo '<b>No such a Canditates</b>.';
+        exit;
+    }
+    
+    $line = mysqli_fetch_assoc($result); 
+    
+   echo '
+    <form action="index.php?id=41" method="POST">
+    <input type="hidden" name="id" value="'.$_GET['student'].'"/>
+    <table border="1">
+      tr><td width="150"><b>First name:</b> </td><td width="200"><input type="text" name="first_name" /></td>>
+            <tr><td width="120"><b>Last name:</b> </td><td width="200"><input type="text" name="last_name" /></td></>
+            <tr><td width="120"><b>Age: <br> </b> </td><td width="200"><input type="int" name="age" /></td></>
+            <tr><td width="120"><b>Phone number:</b> </td><td width="200"><input type="text" name="phone_number" /><>
+            <tr><td width="120"><b>Skills: <br> </b> </td><td width="200"><input type="text" name="skills" /></td></>
+            <tr><td width="120"><b>Link resume: </b> </td><td width="200"><input type="text" name="link_resume" /></>
+       <tr><td></td><td><input type="submit" name="send" value="Change the data" /></td></tr>
+    </table>
+    </form>
+   ';         
+   die();
+}
+
+
+    $querytext="select * FROM students";
+    $result = mysqli_query($link, $querytext);
+?>
+<table border="1">
+<tr>
+  <td width="40"><b>ID</b> </td>
+  <td width="90"><b>First name:</b> </td>
+  <td width="90"><b>Last name::</b> </td>
+  <td width="120"><b>Age:</b> </td>
+  <td width="80"><b>Phone number:</b> </td>
+  <td width="40"><b>Skills:</b> </td>
+  <td width="80"><b>Link resume:</b> </td>
+  <td width="60"><b>Edit:</b></td>
+</tr>
+<?PHP
+         while ($line = mysqli_fetch_array($result))
+          {
+             echo "<tr>
+               <td align=\"center\">".$line['id']."</td>
+                   <td align=\"left\">".$line['first_name']."</td>
+                   <td align=\"left\">".$line['last_name']."</td>
+                   <td align=\"left\">".$line['age']."</td>
+                   <td align=\"center\">".$line['phone_number']."</td>
+                   <td align=\"center\">".$line['skills']."</td>
+ 			<td align=\"center\">".$line['link_resume']."</td>
+                   <td align=\"center\"><a href=\"index.php?id=4&student=".$line['id']."\">Edit</a></td>
+                   </tr>";
+          }
+mysqli_close($link);
+?>
+</table>

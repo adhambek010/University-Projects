@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{yhmath}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath, amsthm}
+\newtheorem{defi}{Definition}
+\newtheorem {thr}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{n}{Note}
+\title{\textbf{\S 10.  Arcs and Curves. Connected Sets}}
+
+
+
+\begin{document}
+
+\maketitle
+
+A deeper insight into continuity and the Darboux property can be gained by
+generalizing the notions of a convex set and polygon-connected set to obtain
+so-called \textit{connected} sets.\\
+\textbf{I.} {As a first step, we consider \textit{arcs} and \textit{curves}.}
+\begin{defi}
+\end{defi}
+    {A set $A \subseteq ( S,\rho_ )$ is called an \textit{arc} if A is continuous image of a compact interval $\left[a, b\right] \subset E^1$, i.e., if there is continuous mapping}  
+    $$f: [a, b] \longrightarrow_{onto}  A.$$
+    If, in addition, $f$ is one to one, A is called a \textit{simple} arc with \textit{endpoints} $f(a)$ and $f(b)$.\\
+    If instead $f(a) = f(b)$, we speak of a closed \textit{curve}.\\
+    A curve is continuous image of \textit{any} finite or infinite interval $E^1$.\\ 
+\begin{cor}
+    {Each arc is a compact (hence closed and bounded) set (by \textit{Theorem 1 of \S8})}
+\end{cor}
+\begin{defi}
+\end{defi}
+    {A set $A \subseteq ( S,\rho_ )$  is said to be \textit{arcwise connected} if every two points $p,q \in A$ are in some simple arc contained in A (We then also say $p$ and $q$ can be \textit{joined} by an arc in A.)}\\
+
+\paragraph{Examples.}
+\begin{enumerate}
+    \item[(a)]\ Every closed line segment $L \left[\overline{a}, \overline{b}\right]$ in $E^n$ ($\ast$ or in any other normed space) is simple arc (consider the map $f$ in Example (1) of \S8).
+    \item[(b)] Every \textit{polygon} 
+    $$A = \bigcup_{i=0}^{m-1} L=\left[\overline{p}_{i}, \overline{p}_{i+1}\right] $$
+    \textit{is an arc} (see Problem 18 in \S 8).  It is a \textit{simple} arc if the half-closed segments $L=\left[\overline{p}_{i}, \overline{p}_{i+1}\right]$ do not intersect and the points $\overline{p}_{i}$ are distinct, for then the map $f$ in Problem 18 of \S 8 is one to one.
+    \item[(c)] It is easily follows that \textit{every polygon-connected set is also arcwise connected;} one only has to show that every polygon joining two points $\overline{p}_{0}, \overline{p}_{m}$ can be reduced to a \textit{simple} polygon (not a self-intersecting one). See \ Problem 2.\\
+    However, the converse is false. For example, two discs in $E^2$ connected by a parabolic arc from together an \textit{arcwise}- (but \textit{not polygonwise-}) connected set
+\end{enumerate}
+\begin{enumerate}
+    \item [(d)] Let $f_1, f_2,...,f_n$ be real continuous functions on an interval $I \subseteq E^1$. Treat them $E^1$as components of a function $f: I \to E^n$,  $$f = (f_1,...,f_n).$$
+    Then $f$ is continuous by Theorem 2 in \S 3. Thus the image of set $f{[I]}$ is a \textit{curve} in $E^n$;  it is an \textit{arc} if $I$ is a closed interval.\\
+    Introducing a parameter $t$ varying over $I$, we obtain the \textit{parametric equations} of the curve, namely, $$x_k = f_k(t),k=1,2,...,n.$$ 
+    Then as $t$ varies over $I$, the point ${x_1,...,x_n}$ describes the curve $f{[I]}$. This is the usual way of treating curves in $E^n$ ($\ast$ and $C^n$).
+\par
+    It is not hard to show that Theorems 2-4 of Chapter 3, \S12, and Problem 15 of Chapter 4, \S2. The reader is advised to review them. In particular, we have the following theorem. 
+\end{enumerate}
+
+\par
+It is not hard to show that Theorem 1 in \S9 holds also if $B$ is only \textit{arcwise} connected (see Problem 3 below). However, much more can be proved by introducing the general notion of a \textit{connected} set. We do this next. 
+\paragraph{\textbf{$\ast$II}} For this topic, we shall need Theorems 2–4 of Chapter 3, \S12, and Problem 15 of Chapter 4, \S2. The reader is advised to review them. In particular, we have the following theorem.
+\begin{thr}
+    A function $f:(A,\rho)\rightarrow(T,\rho^{'})$ is continuous on $A \ {if} \ f^{-1} {[B]}$ is closed in $A,\rho)$ for each closed set $B \subseteq (T,\rho^{'})$; similarly for open sets.
+\end{thr}
+Indeed, this is part of Problem 15 in §2 with $(S,\rho)$ replaced by $(A,\rho)$.
+\begin{defi}
+\end{defi}
+    A metric space $(S,\rho)$ is said to be \textit{connected} if $S$ is \textit{not}
+    the union $P \cup Q$ of any two nonvoid disjoint closed sets; it is \textit{disconnected} otherwise.$^1$\\
+    $A$ \textit{set} $A \subseteq (S,\rho)$ is called connected if $(A,\rho)$ is connected \textit{as a subspace of} $(S,\rho)$; i.e., if $A$ is not union of two disjoint sets $P,Q\ne \emptyset$  that are
+    closed (hence also open) \textit{in} $(A,\rho)$ \textit{as a subspace of} $(S,\rho$.
+    \begin{n}
+    \textnormal{Theorem 4 of Chapter 3, \S12, this means that $$P = A \cap P_{1} \ and \ Q =  A\cap Q_{1}$$ for some sets $P_{1}, Q_{1}$ that are closed \textit{in} $(S,\rho$. Observe that, unlike compact
+sets, a set that is closed or open in $(A,\rho$ need to be closed or open in $(S,\rho)$.}
+    \end{n}
+\paragraph{\textbf{Examples.}}
+\begin{enumerate}
+    \item [(a')] $\emptyset$ is connected
+    \item [(b')] So is any one-point set ${\rho}$.(Why?)
+    \item [(c')] Any \textit{finite} set of \textit{two or more} points is disconnected.(Why?)\\
+\end{enumerate}
+    Other examples are provided by the theorems that follow.
+\begin{thr}
+    The only connected sets in $E^1$ are exactly all convex sets, i.e., finite and infinite intervals, including $E^1$ itself.
+\end{thr}
+\paragraph{\textbf{Proof.}}The proof that such intervals are exactly \textit{all} convex sets in $E^1$ is left as an exercise.\\
+We now show that each connected set $A \subseteq E^1$ is convex, i.e., that $a,b \in A$ \textit{implies} $(a,b)\subseteq A$.\\
+Seeking a contradiction, suppose $\rho \notin A$ for some $\rho \in (a,b),a,b \in A$. Let $$P = A \cap (-\infty, \rho) \ and \ Q = A\cap(\rho, +\infty). $$ Then $A = P \cup Q, \ a \in  P, \ b \in Q,$ and $ P \cap Q = \emptyset$. Moreover, $(-\infty,\rho)$ and $(\rho, +\infty)$ are \textit{open sets} in $E^1$. (Why?) Hence $P$ and $Q$ are\textit{open in } $A$, each being the intersection of $A$ with a set open in $E^1$ (see Note 1 above). As $A = P\cup Q$, with $P\cap Q = \emptyset$, it follows that $A$ is \textit{disconnected}. This shows that if $A$ is connected in $E^1$, it \textit{must} be convex.\\
+Conversely, let $A$ be convex in $E^1$. The proof that A is connected is an
+almost exact copy of the proof given for Theorem 1 of \S9, so we only briefly
+sketch it here$^2$.\\
+If A were disconnected, then $A = P \cup Q$  for some disjoint sets $P,Q \neq \emptyset$, both closed in $A$. Fix any $\rho \in P$ and $p \in Q$. . Exactly as in Theorem 1 of \S9, select a contracting sequence of line segments (intervals) $\left[p_m, b_m\right] \subseteq A$ such that $p_m \in P, q_m \in Q$ and $\mid p_m - q_m\mid \to 0$ , and obtain a point $$r \in \bigcap^{\infty}_{m=1}\left[p_m, q_m\right] \subseteq A,$$
+so that $p_m \to r, q_m \to r, and r \in A.$ As the sets $P \ and \ Q$ are \textit{closed} in $(A,\rho)$, Theorem 4 of Chapter 3, \S16 shows that \textit{both} $P \and \ Q$ must contain the common limit $r$ of the sequences ${p_m} \subseteq P$ and ${q_m} \subseteq Q$. This is impossible, however, since $P \cap Q = \emptyset$, by assumption. This contradiction shows that $A$ cannot be disconnected. Thus all is proved. \  $\square$
+\begin{n}
+    \textnormal{By the same proof,} any any convex set in a normed space is connected. \textnormal{In particular} $E^n$ and all other normed spaces are connected themselves.$^3$
+\end{n}
+\begin{thr}
+    If a function $f: A \to (T,\rho')$ with $A \subseteq (S,\rho$ is relatively continuous on a connected set $B \subseteq A$, then $f[B]$ is a connected set in $(T,\rho')$.$^4$
+\end{thr}
+\end{document}
